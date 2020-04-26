@@ -8,7 +8,7 @@ Sprawdź czy Twoja wiedza z obiektów w JavaScript jest wystarczająca!
 
 &nbsp;
 
-**Zadania:** :point_right: [:one:](./01) &nbsp; [:two:](./02) &nbsp; [:three:](./03) &nbsp; [:four:](./04) &nbsp; [:five:](./05)  :triangular_flag_on_post:
+**Zadania:** :point_right: [:one:](./01) &nbsp; [:two:](./02) &nbsp; [:three:](./03) &nbsp; [:four:](./04)  :triangular_flag_on_post:
 
 &nbsp;
 

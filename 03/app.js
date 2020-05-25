@@ -42,10 +42,33 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
-
-}
+    
+        const plTitle = this[isbn]['title']['pl']
+        const enTitle = this[isbn]['title']['en']
+        //console.log(lang)
+        if(lang !== 'en')
+        {
+            return plTitle;
+        }
+        return enTitle
+    }
 
 books.getTranlator = function(isbn, lang) {
+    const plTranslator = this[isbn]['translator']['pl']
+    const engTranslator = this[isbn]['translator']['en']
+
+    if(lang === 'pl')
+    {
+        return plTranslator
+    }
+    else if(engTranslator === null || plTranslator === null){
+        return false;
+            }
+    else 
+    {
+        return engTranslator;
+    }
+
 
 }
 
@@ -54,5 +77,9 @@ console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling
 console.log( books.getAuthor('000-00-0000-000-0') ); // null
 console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kamień Filozoficzny
 console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
+console.log( books.getTranlator('978-83-7278-000-3', 'pl') );
+console.log( books.getTranlator('978-83-7278-000-3', 'en') );
+console.log(books.getTitle('83-7278-007-2', 'pl') );
+console.log(books.getTitle('83-7278-007-2', 'en') );
 console.log( books.getTranlator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
 console.log( books.getTranlator('83-7278-007-2', 'en') ); // false

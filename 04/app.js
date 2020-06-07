@@ -14,7 +14,7 @@ const user = {
 // kiedy liczba dnia jest jednocyfrowa
 
 const bDay = function isBday(user) {
-  const today = parseInt(new Date().getDate()) + '/' + (new Date().getMonth()+1);
+  const today = startWithZero(new Date().getDate()) + '/' + startWithZero(new Date().getMonth()+1);
   const born = (`${user.born['day']}/${user.born['month']}`);
 
 
@@ -26,6 +26,10 @@ const bDay = function isBday(user) {
   } else {
     console.log('Trop żubry dalej');
   }
+}
+
+function startWithZero(num) {
+  return (num < 10 ? '0':'') + num;
 }
 // user.isBday = (date) {
 //   const today = new Date().getDate()

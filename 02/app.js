@@ -9,3 +9,11 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
+
+for (el in calendarJS) {
+  if (calendarJS[el] === null) {
+    console.log(`${el} nie zostało wydane`);
+  } else {
+    console.log(`${el} wydano w terminie ${calendarJS[el]}`);
+  }
+}

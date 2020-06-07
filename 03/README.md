@@ -8,7 +8,7 @@ Tym razem w pliku `app.js` znajdziesz rozbudowaną strukturę, która przechowuj
 
 Twoim zadaniem będzie napisanie funkcji, `getTitle` oraz `getTranlator`, które pozwolą pobrać informacje o konkretnej książce. Funkcja `getAuthor` została już napisana i możesz się na niej wzorować jednak pamiętaj, że przyjmuje ona tylko jeden parametr.
 
-W przypadku Twoich funkcji (metod) mamy dodatkową zależność, która jest identyfikowana przy pomocy drugiego parametru. Pamiętaj, aby sprawdzić czy właścwość istnieje. Jeśli nie to zwróć `null`.
+W przypadku Twoich funkcji (metod) mamy dodatkową zależność, która jest identyfikowana przy pomocy drugiego parametru. Pamiętaj, aby sprawdzić czy właściwość istnieje. Jeśli nie to zwróć `null`.
 
 W przypadku funkcji `getTranslator` sprawdź również czy wartość nie jest równa `null`. To będzie oznaczać, że wybrany język jest językiem orginału i wtedy należy zwrócić `false`.
 

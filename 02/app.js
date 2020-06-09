@@ -9,3 +9,19 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
+
+function showCalendarJS(key) {
+
+    for (const key in calendarJS) {
+        if (calendarJS[key] === null) {
+            console.log(`${key} nie  wydano w teminie!`)
+        } else {
+            console.log(`${key} wydano w teminie : ${calendarJS[key]}`)
+        }
+    }
+
+}
+
+
+
+showCalendarJS()

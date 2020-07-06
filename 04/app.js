@@ -2,15 +2,23 @@ const user = {
     firstName: 'Adam',
     lastName: 'Nowak',
     born: {
-        day: '14',
-        month: '04',
+        day: '06',
+        month: '07',
         year: '1985'
     }
 }
-const day = new Date().getUTCDate();
-const month = new Date().getMonth();
+const date = new Date();
+const day = date.getUTCDate();
+const month = date.getMonth() + 1;
+
+const userBornDate = parseInt(user.born.day);
+const userBornMonth = parseInt(user.born.month);
+
 console.log(month);
-if (user.born.day == day && user.born.month == month) {
+console.log(userBornMonth)
+
+
+if (userBornDate == day && userBornMonth == month) {
     console.log('Happy B-Day')
 } else {
     console.log('Not your birthday today')

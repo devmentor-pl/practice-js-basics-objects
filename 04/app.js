@@ -7,3 +7,9 @@ const user = {
         year: '1985'
     }
 }
+
+const todayDate = new Date();
+
+if((user.born.day == todayDate.getDate()) && (user.born.month == todayDate.getMonth() + 1) && (user.born.year == todayDate.getFullYear())) {
+    console.log('Happy birthday', user.firstName);
+}

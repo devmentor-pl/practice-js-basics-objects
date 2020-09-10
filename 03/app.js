@@ -42,11 +42,17 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
-
+    if((typeof this[isbn] === 'undefined') || (typeof this[isbn].title === 'undefined') || (typeof this[isbn].title[lang] === 'undefined'))
+        return null;
+    
+    return this[isbn].title[lang];
 }
 
 books.getTranlator = function(isbn, lang) {
-
+    if((typeof this[isbn] === 'undefined') || (typeof this[isbn].translator === 'undefined') || (typeof this[isbn].translator[lang] === 'undefined') || (!this[isbn].translator[lang]))
+        return false;
+    
+    return this[isbn].translator[lang];
 }
 
 

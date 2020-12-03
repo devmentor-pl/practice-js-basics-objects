@@ -10,6 +10,14 @@ const user = {
 
 const now = new Date();
 
+/* Sprawdzenie */
+console.log(user.born['month']);   // '04'
+console.log(user.born['day']);     // '14'
+console.log(now.getMonth());       // '11'
+console.log(now.getDate());        // '3'
+
+
+
 const check = checkDate(user, now)
 
 if (check === true) {
@@ -20,7 +28,10 @@ if (check === true) {
 
 
 function checkDate(user, date) {
-    if (user.born['year'] == date.getFullYear() || user.born['month'] == date.getMonth() || user.born['day'] == date.getDate()) {
+    let month = parseInt(user.born['month']);
+    let day = parseInt(user.born['day']);
+
+    if (month === date.getMonth() && day === date.getDate()) {
         return true;
     } else {
         return false

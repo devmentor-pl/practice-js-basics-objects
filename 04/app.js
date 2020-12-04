@@ -13,8 +13,8 @@ const now = new Date();
 /* Sprawdzenie */
 console.log(user.born['month']);   // '04'
 console.log(user.born['day']);     // '14'
-console.log(now.getMonth());       // '11'
-console.log(now.getDate());        // '3'
+console.log(now.getMonth() + 1);   // '12'
+console.log(now.getDate());        // '4'
 
 
 
@@ -30,11 +30,14 @@ if (check === true) {
 function checkDate(user, date) {
     let month = parseInt(user.born['month']);
     let day = parseInt(user.born['day']);
+    let monthLokal = date.getMonth() + 1;
+    let dayLokal = date.getDate();
 
-    if (month === date.getMonth() && day === date.getDate()) {
+
+    if (month === monthLokal && day === dayLokal) {
         return true;
     } else {
-        return false
+        return false;
     }
 }
 

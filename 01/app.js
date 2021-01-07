@@ -5,4 +5,7 @@ const user = {
     age: 32,
 }
 
-console.log(user);
+console.log(firstName);
+console.log(lastName);
+console.log(sex);
+console.log(age);

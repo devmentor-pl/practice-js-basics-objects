@@ -2,7 +2,7 @@
 
 &nbsp;
 
-# `#03` JavaScript: Podstawy - obiekty
+# `#04` JavaScript: Podstawy - obiekty
 
 W pliku `app.js` znajdziesz zmienną `user`, która przechowuje informacje o użytkowniku. 
 

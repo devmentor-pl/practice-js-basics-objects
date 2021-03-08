@@ -9,3 +9,7 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
+
+for(const key in calendarJS) {
+    console.log(typeof calendarJS[key] === 'string' ? key +' wydano w terminie '+ calendarJS[key] : key +' nie zostało wydane');    
+};

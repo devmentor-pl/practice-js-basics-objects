@@ -41,12 +41,28 @@ books.getAuthor = function(isbn) {
     return false;
 }
 
+// jeśli zostnaie podany niepoprawny ISBN lub język którego nie ma na liście zwróci null
 books.getTitle = function(isbn, lang) {
-
+if(typeof this[isbn] === 'undefined' || typeof this[isbn]['title'][lang] ==='undefined' ) {
+    return null;
+}
+const title = this[isbn]['title'][lang];
+if(title) {
+    return title;
+}
 }
 
 books.getTranlator = function(isbn, lang) {
+if(typeof this[isbn] === 'undefined' || typeof this[isbn]['translator'][lang] === 'undefined') {
+    return null;
+}
+const translator = this[isbn]['translator'][lang];
+ 
+if(typeof translator === 'object') return false;
 
+if(translator) {
+    return translator;
+}
 }
 
 

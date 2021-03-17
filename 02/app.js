@@ -9,3 +9,13 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
+
+for (let property in calendarJS){
+
+    if(calendarJS[property] !== null){
+        console.log(`${property} wydano w terminie ${calendarJS[property]}`)
+    } else {
+        console.log(`${property} nie zostało wydane`)
+    }
+
+}

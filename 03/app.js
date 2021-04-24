@@ -48,13 +48,13 @@ const books = {
 books.getAuthor = function(isbn) {
     // w tym przypadku this === books
     
-    if(typeof this[isbn] === 'undefined') {
+    if (typeof this[isbn] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
     }
 
     const author = this[isbn]['author'];
-    if(author) {
+    if (author) {
         // zwracam informacje o autorze
         return author;
     }

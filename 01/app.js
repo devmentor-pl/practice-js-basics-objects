@@ -1,7 +1,5 @@
 
-let user = new Object();
-
-user = {
+const user = {
     firstName: 'Gieniek',
     lastName: 'Ogórkiewicz',
     sex: 'male',

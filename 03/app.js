@@ -25,7 +25,7 @@ const books = {
 
 books.getAuthor = function(isbn) {
     // w tym przypadku this === books
-    
+
     if(typeof this[isbn] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
@@ -41,13 +41,35 @@ books.getAuthor = function(isbn) {
     return false;
 }
 
+
 books.getTitle = function(isbn, lang) {
 
+    const title = this[isbn]['title'][lang];
+
+    if( (typeof this[isbn] === 'undefined') || (typeof this[isbn]['title'][lang] === 'undefined') ) {
+      return null;
+    }
+    return title;
 }
+
+
+
 
 books.getTranlator = function(isbn, lang) {
 
+    const translator = this[isbn]['translator'][lang];
+
+    if( (typeof this[isbn] === 'undefined') || (typeof this[isbn]['translator'][lang] === 'undefined') ) {
+        return null;
+    }
+     else if(this[isbn]['translator'][lang] === null) {
+            return false;
+     }
+      else {
+        return translator;
+      }
 }
+
 
 
 console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling
@@ -56,3 +78,6 @@ console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kami
 console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
 console.log( books.getTranlator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
 console.log( books.getTranlator('83-7278-007-2', 'en') ); // false
+
+
+

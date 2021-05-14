@@ -14,7 +14,7 @@ const books = {
         author: 'J.K. Rowling',
         title: {
             en: 'Harry Potter and the Chamber of Secrets',
-            pl: 'Harry Potter i Komnata Tajemnic ',
+            pl: 'Harry Potter i Komnata Tajemnic',
         },
         translator: {
             en: null,
@@ -43,28 +43,22 @@ books.getAuthor = function(isbn) {
 
 books.getTitle = function(isbn, lang) {
     
-     const bookTitle = this[isbn]['title'];
-    if(typeof bookTitle[lang] === 'undefined') {
-        return null;
-    } else {
-        return bookTitle[lang];
-    }
-    
-        
+     const bookTitle = this[isbn]['title'][lang];
 
+     if (bookTitle !== null) {
+        return bookTitle;   }
+    
+    return null;
 }
 
 books.getTranlator = function(isbn, lang) {
 
-    const translatorLang = this[isbn]['translator'];
-
-    if(typeof translatorLang[lang] !== null ) {
-        return translatorLang[lang];
-        
+    const translatorLang = this[isbn]['translator'][lang];
+    if(translatorLang !== null) {
+        return translatorLang;
     }
 
-    return translatorLang;
-  
+    return false;
 }
 
 

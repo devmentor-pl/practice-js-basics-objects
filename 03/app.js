@@ -1,8 +1,9 @@
 const books = {
     '978-83-7278-000-3': {
         author: 'J.K. Rowling',
-        title: {
-            en: 'Harry Potter and the Philosopher\'s Stone',
+        title:
+        {
+            en: "Harry Potter and the Philosopher's Stone",
             pl: 'Harry Potter i Kamień Filozoficzny',
         },
         translator: {
@@ -44,10 +45,12 @@ books.getAuthor = function(isbn) {
 books.getTitle = function(isbn, lang) {
     
      const bookTitle = this[isbn]['title'][lang];
+     
 
-     if (bookTitle !== null) {
-        return bookTitle;   }
-    
+     if(typeof this[isbn] !== 'undefined' && typeof this[isbn]['title'] !== 'undefined' && typeof this[isbn]['title'][lang] !== 'undefined') {
+         return bookTitle
+     }
+
     return null;
 }
 

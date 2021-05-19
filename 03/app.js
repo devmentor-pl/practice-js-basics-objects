@@ -1,8 +1,9 @@
 const books = {
     '978-83-7278-000-3': {
         author: 'J.K. Rowling',
-        title: {
-            en: 'Harry Potter and the Philosopher\'s Stone',
+        title:
+        {
+            en: "Harry Potter and the Philosopher's Stone",
             pl: 'Harry Potter i Kamień Filozoficzny',
         },
         translator: {
@@ -14,7 +15,7 @@ const books = {
         author: 'J.K. Rowling',
         title: {
             en: 'Harry Potter and the Chamber of Secrets',
-            pl: 'Harry Potter i Komnata Tajemnic ',
+            pl: 'Harry Potter i Komnata Tajemnic',
         },
         translator: {
             en: null,
@@ -42,11 +43,25 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
+    
+     const bookTitle = this[isbn]['title'][lang];
+     
 
+     if(typeof this[isbn] !== 'undefined' && typeof this[isbn]['title'] !== 'undefined' && typeof this[isbn]['title'][lang] !== 'undefined') {
+         return bookTitle
+     }
+
+    return null;
 }
 
 books.getTranlator = function(isbn, lang) {
 
+    const translatorLang = this[isbn]['translator'][lang];
+    if(translatorLang !== null) {
+        return translatorLang;
+    }
+
+    return false;
 }
 
 

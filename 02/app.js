@@ -9,3 +9,11 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
+
+const showMsg = calendar(calendarJS);
+
+function calendar(object) {
+    for (const key in object) {
+        console.log(`${typeof object[key] === 'string' ? `${key} wydano w terminie ${object[key]}` : `${key} nie zostało wydane.`}`);
+    }
+}

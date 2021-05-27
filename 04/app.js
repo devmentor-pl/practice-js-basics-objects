@@ -10,7 +10,7 @@ const user = {
 const now = new Date();
 
 function checkBirthday() {
-    if ((now.getDate() == user['born']['day']) && ((now.getMonth() + 1) == user['born']['month'])) {
+    if ((now.getDate() === parseInt(user['born']['day'])) && ((now.getMonth() + 1) === parseInt(user['born']['month']))) { // czy tutaj można było pominąć parseInt() i użyć "==" ?
         console.log('Adam ma dzisiaj urodziny')
     } else {
         console.log('Adam ma urodziny:', showBirthday());

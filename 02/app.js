@@ -17,3 +17,5 @@ for (const key in calendarJS) {
         console.log(key, 'wydano w terminie', calendarJS[key]);
     }
 }
+
+

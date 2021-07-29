@@ -11,7 +11,6 @@ const calendarJS = {
 }
 
 for (const edition in calendarJS) {
-    calendarJS[edition] ?
-        console.log(`${edition} wydano w terminie ${calendarJS[edition]}`) :
-        console.log(`${edition} nie zostało wydane`);
+    const text = calendarJS[edition] ? (' wydano w terminie ' + calendarJS[edition]) : ' nie zostało wydane';
+    console.log(edition + text);
 }

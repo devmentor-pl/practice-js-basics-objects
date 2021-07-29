@@ -8,13 +8,15 @@ const user = {
     }
 }
 
-const birthday = Object.values(user.born).slice(0, 2).map(el => parseInt(el));
+const dayBirth = +user.born.day;
+const monthBirth = +user.born.month;
 
-checkBirthday(birthday);
+checkBirthday(dayBirth, monthBirth);
 
-function checkBirthday(arr) {
+function checkBirthday(day, month) {
     const today = new Date();
-    (today.getDate() - arr[0] === 0 && (today.getMonth() + 1) - arr[1] === 0) ?
-        console.log(`${user.firstName} ma dziś urodziny :)`) :
-        console.log(`${user.firstName} nie ma dziś urodzin :(`);
+    const text = (today.getDate() === day && (today.getMonth() + 1) === month) ?
+        'ma dziś urodziny' :
+        'nie ma dziś urodzin';
+    console.log(user.firstName + ' ' + text);
 }

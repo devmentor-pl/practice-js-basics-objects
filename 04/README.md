@@ -2,13 +2,13 @@
 
 &nbsp;
 
-# `#04` JavaScript: Podstawy - obiekty
+# `#04` JavaScript: Podstawy – obiekty
 
 W pliku `app.js` znajdziesz zmienną `user`, która przechowuje informacje o użytkowniku. 
 
-Twoim zadaniem będzie napisanie programu, który sprawdzi czy przypadkiem ten użytkownik nie obchodzi urodzin w dniu dzisiejszym. Wykorzystaj do tego obiekt `Date`. 
+Twoim zadaniem będzie napisanie programu, który sprawdzi, czy przypadkiem ten użytkownik nie obchodzi dzisiaj urodzin. Wykorzystaj do tego obiekt `Date`. 
 
-Pamiętaj, aby przetestować swoje rozwiązanie czyli zmodyfikować informacje o urodzinach na wartość zgodną z dzisiejszą datą.
+Pamiętaj, aby przetestować swoje rozwiązanie, czyli zmienić datę urodzenia użytkownika na wartość zgodną z dzisiejszą datą.
 
 &nbsp;
 

@@ -2,15 +2,15 @@
 
 &nbsp;
 
-# `#01` JavaScript: Podstawy - obiekty
+# `#01` JavaScript: Podstawy – obiekty
 
 Utwórz obiekt, który będzie przypisany do zmiennej `user`. 
 
 Obiekt ten ma posiadać 4 właściwości:
-* firstName
-* lastName
-* sex
-* age 
+* firstName,
+* lastName,
+* sex,
+* age.
 
 Następnie wartość każdej właściwości obiektu wyświetl w konsoli.
 

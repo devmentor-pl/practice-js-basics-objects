@@ -2,13 +2,14 @@
 
 &nbsp;
 
-# `#02` JavaScript: Podstawy - obiekty
+# `#02` JavaScript: Podstawy – obiekty
 
-W pliku `app.js` znajdziesz zmienną `calendarJS`, która zawiera informacje o wydaniach kolejnych wersji standardu dla języka JavaScript.
+W pliku `app.js` znajdziesz zmienną `calendarJS`, która zawiera informacje o wydaniach kolejnych wersji standardu języka JavaScript.
 
-Twoim zadaniem będzie wyświetlić te dane w konsoli przy użyciu pętli `for .. in`. Treść jaka ma się pojawić to odpowiednio dla pierwszego wpisu to: `ES1 wydano w terminie 1997-06`.
+Twoim zadaniem jest wyświetlić te dane w konsoli przy użyciu pętli `for...in`.
+Przykładowo dla pierwszego wydania tekst będzie wyglądał następująco: `ES1 wydano w terminie 1997-06`.
 
-Jeśli wartość dla danej właściwości będzie równa `null` (tak jak w przypadku ES4) to tekst w konsoli ma się prezentaować w ten sposób: `ES4 nie zostało wydane`.
+Jeśli wartość dla danej właściwości będzie równa `null` (tak jak w przypadku ES4), to tekst w konsoli ma się prezentować w ten sposób: `ES4 nie zostało wydane`.
 
 Pamiętaj, że do wartości właściwości możesz się odwołać przy pomocy konstrukcji `const valueFromObjectProp = object[variableWithPropName]`.
 

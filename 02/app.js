@@ -15,7 +15,7 @@ function calendarList() {
 
     for (const element in calendarJS) {
 
-        if (calendarJS[element] == null) {
+        if (calendarJS[element] === null) {
 
             console.log('ES4 nie zostało wydane');
 

@@ -47,7 +47,10 @@ books.getTitle = function(isbn, lang) {
     if (typeof this[isbn] !== 'undefined' && typeof this[isbn]['title'] !== 'undefined') {
         const title = this[isbn]['title'];
 
-        return title[lang];
+        if (typeof this[lang] !== undefined) {
+
+            return title[lang];
+        }
     }
     
     else {

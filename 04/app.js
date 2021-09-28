@@ -11,8 +11,8 @@ const user = {
 user.getBirthdayDay = function() {
   
     const date = new Date();
-    const month = date.getMonth() + 1;  //mam nadzieję, że o to chodziło bo bardzo mało stron znalazłem
-    const day = date.getDate(); // wyjaśniających działanie obiektu Date. Chciałbym to jutro omówić :)
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
 
     // console.log(date);
     // console.log(month);

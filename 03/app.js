@@ -43,6 +43,10 @@ books.getAuthor = function(isbn) {
 
 books.getTitle = function(isbn, lang) {
 
+    if(typeof this[lang] === undefined){
+        return null;
+    }
+
     if(lang === 'pl'){
         const titlePl = this[isbn]['title']['pl'];
         return titlePl;
@@ -57,6 +61,10 @@ books.getTitle = function(isbn, lang) {
 
 books.getTranlator = function(isbn, lang) {
 
+    if(typeof this[lang] === undefined){
+        return null;
+    }
+    
     if(lang === 'pl'){
         const translatorPl = this[isbn]['translator']['pl'];
         return translatorPl;
@@ -77,3 +85,4 @@ console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kami
 console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
 console.log( books.getTranlator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
 console.log( books.getTranlator('83-7278-007-2', 'en') ); // false
+console.log( books.getTranlator('83-7278-007-2', 'es') ); // sprawdzam czy działa spr czy właściwość istnieje

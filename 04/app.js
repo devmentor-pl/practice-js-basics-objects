@@ -15,7 +15,7 @@ console.log('Dzisiejsza data to: ' + nowDate + " " + nowMonth);
 
 user.checkData = function(day,month) {
 
-    if((user['born']['day'] == day) && (user['born']['month'] == month)){
+    if((this['born']['day'] == day) && (this['born']['month'] == month)){
         console.log('Adam Nowak ma dzis urodziny! Wszytkiego najlepszego Adam');
     }
     else {

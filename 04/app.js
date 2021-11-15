@@ -23,9 +23,6 @@ user.checkData = function(day,month) {
      }
 }
 
-console.log(user['born']['day']);
-console.log(user['born']['month']);
-
 user.checkData(nowDate,nowMonth);
 
 

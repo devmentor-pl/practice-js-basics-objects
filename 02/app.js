@@ -10,12 +10,21 @@ const calendarJS = {
     'ES9': '2018-06',
 }
 
+// for(const key in calendarJS){
+//     console.log(key + ' wydano w terminie ' + calendarJS[key])
+//         if(calendarJS[key] === null){
+//             console.log(key + ' nie zostało wydane');
+//         }
+// }
+
+
 for(const key in calendarJS){
-    console.log(key + ' wydano w terminie ' + calendarJS[key])
-        if(calendarJS[key] === null){
-            console.log(key + ' nie zostało wydane');
-        }
+    if(calendarJS[key] === null){
+        console.log(key + ' nie zostało wydane');
     }
+    else {
+        console.log(key + ' wydano w terminie ' + calendarJS[key])
+    }
+}
 
-
-// const valueFromObjectProp = object[variableWithPropName].
+ 

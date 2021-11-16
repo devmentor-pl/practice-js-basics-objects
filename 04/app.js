@@ -2,15 +2,15 @@ const user = {
     firstName: 'Adam',
     lastName: 'Nowak',
     born: {
-        day: '15',
-        month: '10',
+        day: '16',
+        month: '11',
         year: '1985',
     }
 }
 
 const now = new Date();
 const nowDate = now.getDate();
-const nowMonth = now.getMonth();
+const nowMonth = now.getMonth() + 1;
 console.log('Dzisiejsza data to: ' + nowDate + " " + nowMonth);
 
 user.checkData = function(day,month) {
@@ -35,9 +35,11 @@ user.checkData(nowDate,nowMonth);
 
 
 // function checkData(day){
-//     console.log(day);
 //     if(day == nowDate){
 //         console.log('ok');
+//     }
+//     else {
+//         console.log('blad');
 //     }
 // }
 

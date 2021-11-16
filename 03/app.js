@@ -22,6 +22,7 @@ const books = {
         }
     },
 }
+;
 
 books.getAuthor = function(isbn) {
     // w tym przypadku this === books
@@ -43,40 +44,20 @@ books.getAuthor = function(isbn) {
 
 books.getTitle = function(isbn, lang) {
 
-    if(typeof this[lang] === undefined){
+    const title = this[isbn]['title'][lang]
+        if(title !== 'undefined'){
+            return title;
+        }
         return null;
-    }
-
-    if(lang === 'pl'){
-        const titlePl = this[isbn]['title']['pl'];
-        return titlePl;
-    }
-
-    if(lang ==='en'){
-        const titleEn = this[isbn]['title']['en'];
-        return titleEn;
-    }
-
 }
 
 books.getTranlator = function(isbn, lang) {
 
-    if(typeof this[lang] === undefined){
-        return null;
+    const translator = this[isbn]['translator'][lang];
+    if(translator !== 'undefined' && translator !== null){
+        return translator;
     }
-    
-    if(lang === 'pl'){
-        const translatorPl = this[isbn]['translator']['pl'];
-        return translatorPl;
-    }
-
-    if(this[isbn]['translator']['en'] !== null){
-        const translatorEN = this[isbn]['translator']['en'];
-        return translatorEN;
-    }
-    else {
-        return false
-    }
+    return false;
 }
 
 console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling
@@ -85,4 +66,4 @@ console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kami
 console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
 console.log( books.getTranlator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
 console.log( books.getTranlator('83-7278-007-2', 'en') ); // false
-console.log( books.getTranlator('83-7278-007-2', 'es') ); // sprawdzam czy działa spr czy właściwość istnieje
+

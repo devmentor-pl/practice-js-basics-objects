@@ -12,11 +12,11 @@ const now = new Date(2021, 10, 20)
 const bday = new Date(1985, 03, 14)
 
 const isSameDay = (now, bday) => {
-if (now.getMonth() === bday.getMonth() &&
-    now.getDate() === bday.getDate()) {
-        console.log("najlepszego!");
-} else {
-    console.log("sorry, nie masz urodzin")
+    if (now.getMonth() === bday.getMonth() &&
+        now.getDate() === bday.getDate()) {
+            console.log("najlepszego!");
+}   else {
+        console.log("sorry, nie masz urodzin")
     }
 }
 

@@ -2,22 +2,22 @@ const user = {
     firstName: 'Adam',
     lastName: 'Nowak',
     born: {
-        day: '14',
-        month: '04',
+        day: '21',
+        month: '11',
         year: '1985'
     }
 }
 
-const now = new Date(2021, 10, 20)
-const bday = new Date(1985, 03, 14)
+const now = new Date()
+const bday = new Date(user.born.year, user.born.month - 1, user.born.day)
 
-const isSameDay = (now, bday) => {
+const bdayCheck = (now, bday) => {
     if (now.getMonth() === bday.getMonth() &&
         now.getDate() === bday.getDate()) {
-            console.log("najlepszego!");
-}   else {
+        console.log("najlepszego!");
+    } else {
         console.log("sorry, nie masz urodzin")
     }
 }
 
-isSameDay(now,bday)
+bdayCheck (now, bday)

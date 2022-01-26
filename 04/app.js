@@ -8,15 +8,15 @@ const user = {
     }
 }
 
-user.checkIfBirthday= function() {
-    const date= new Date;
-    const day= addZero(date.getDate());
-    const month= addZero(1+(date.getMonth())); 
-    day===this.born.day&&month===this.born.month?console.log('Its your birthday !'):console.log('Its not your birtday :(');
+user.checkIfBirthday = function() {
+    const date = new Date;
+    const day = addZero(date.getDate());
+    const month = addZero(1+(date.getMonth())); 
+    day === this.born.day && month === this.born.month?console.log('Its your birthday !') : console.log('Its not your birtday :(');
 }
 
 function addZero(element){
-    return element<10?'0'+element:''+element;
+    return element<10 ? '0'+element : ''+element;
 }
 
 user.checkIfBirthday();

@@ -42,11 +42,31 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
+    if(typeof this[isbn] === 'undefined') {
+        return null;
+    }
+    const title = this[isbn]['title'];
+    if(typeof this[isbn]['title'][lang] === 'undefined') {
+        return null;
+        }
+    if (lang) {
+         return title[lang];
+         }
+    }
 
-}
 
 books.getTranlator = function(isbn, lang) {
-
+    if(typeof this[isbn] === 'undefined') {
+        return null;
+    }
+    const translator = this[isbn]['translator'];
+    if(typeof this[isbn]['translator'][lang] === null) {
+        return null;
+    }
+    if (lang) {
+        return translator[lang];
+    }
+    
 }
 
 
@@ -56,3 +76,7 @@ console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kami
 console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
 console.log( books.getTranlator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
 console.log( books.getTranlator('83-7278-007-2', 'en') ); // false
+
+
+
+

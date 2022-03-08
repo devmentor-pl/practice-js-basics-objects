@@ -45,7 +45,7 @@ books.getTitle = function(isbn, lang) {
 
 }
 
-books.getTranlator = function(isbn, lang) {
+books.getTranslator = function(isbn, lang) {
 
 }
 
@@ -54,5 +54,5 @@ console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling
 console.log( books.getAuthor('000-00-0000-000-0') ); // null
 console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kamień Filozoficzny
 console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
-console.log( books.getTranlator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
-console.log( books.getTranlator('83-7278-007-2', 'en') ); // false
+console.log( books.getTranslator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
+console.log( books.getTranslator('83-7278-007-2', 'en') ); // false

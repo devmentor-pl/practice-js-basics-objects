@@ -25,7 +25,7 @@ const books = {
 
 books.getAuthor = function(isbn) {
     // w tym przypadku this === books
-    
+
     if(typeof this[isbn] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
@@ -41,13 +41,18 @@ books.getAuthor = function(isbn) {
     return false;
 }
 
-books.getTitle = function(isbn, lang) {
-
+books.getTitle = function (isbn, lang) {
+    return this?.[isbn] && this[isbn] !== undefined ? this[isbn]['title'][lang]:null
 }
+books.getTranslator = function (isbn, lang) {
+    if (this?.[isbn] && !this[isbn]['translator'][lang]) {
+        return this[isbn]['translator'][lang] = false;
+    };
 
-books.getTranslator = function(isbn, lang) {
-
-}
+    if (this?.[isbn] && this[isbn] !== undefined) {
+       return this[isbn]['translator'][lang];
+    };
+};
 
 
 console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling

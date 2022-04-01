@@ -45,7 +45,7 @@ books.getTitle = function (isbn, lang) {
     return this?.[isbn] && this[isbn] !== undefined ? this[isbn]['title'][lang]:null
 }
 books.getTranslator = function (isbn, lang) {
-    if (!this[isbn]['translator'][lang]) {
+    if (this?.[isbn] && !this[isbn]['translator'][lang]) {
         return this[isbn]['translator'][lang] = false;
     };
 

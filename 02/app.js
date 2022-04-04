@@ -9,3 +9,14 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
+
+// const objectLength = Object.keys(calendarJS).length        //myślałem, że muszę pobrać długość obiektu, ale for in iteruje po wszystkich
+                                                            
+for (const key in calendarJS) {
+    if (calendarJS[key] !== null) {
+        console.log(`${key} wydano w terminie ${calendarJS[key]}`)
+    } else {
+        console.log((`${key} nie zostało wydane`))
+    }
+}
+

@@ -14,9 +14,10 @@ console.log(calendarJS)
 for(let key in calendarJS) {
     let value = calendarJS[key]
     if(calendarJS[key] === null) {
-        value = 'nie zostało wydane'
+        console.log(key, ' nie zostało wydane')
+    } else {
+        console.log(key, ' wydano w terminie ', value)
     }
-    console.log(key, ' wydano w terminie ', value)
 }
 
 

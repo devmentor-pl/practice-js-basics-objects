@@ -14,8 +14,8 @@ const user = {
 //     firstName: 'Adam',
 //     lastName: 'Nowak',
 //     born: {
-//         day: '29',
-//         month: '03',
+//         day: '09',
+//         month: '04',
 //         year: '1985'
 //     }
 // }
@@ -31,7 +31,9 @@ console.log('Current date: ', date.getFullYear(), date.getMonth() + 1, date.getD
 // current date for birthday
 const month =  date.getMonth() + 1
 const newMonth = date.getMonth() + 1 < 10 ? '0'+ month: month
-const currentDateBirthday = `${newMonth} ${date.getDate()}`
+const day = date.getDate()
+const newDay = day < 10 ? '0'+ day : day
+const currentDateBirthday = `${newMonth} ${newDay}`
 console.log('current date:', currentDateBirthday)
 
 //  user's date

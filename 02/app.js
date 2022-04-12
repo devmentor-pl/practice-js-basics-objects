@@ -9,3 +9,11 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
+
+
+
+const dates=Object.entries(calendarJS)
+for(const data of dates){
+    const [name,value]=data
+    console.log(`${name} +"wydano w terminie "  ${value}`)
+}

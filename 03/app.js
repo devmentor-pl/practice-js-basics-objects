@@ -25,14 +25,14 @@ const books = {
 
 books.getAuthor = function(isbn) {
     // w tym przypadku this === books
-    
-    if(typeof this[isbn] === 'undefined') {
+
+    if (typeof this[isbn] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
     }
 
     const author = this[isbn]['author'];
-    if(author) {
+    if (author) {
         // zwracam informacje o autorze
         return author;
     }
@@ -43,16 +43,46 @@ books.getAuthor = function(isbn) {
 
 books.getTitle = function(isbn, lang) {
 
+    if (typeof this[isbn] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+    if (typeof this[isbn]['title'] === 'undefined') {
+        return null;
+    }
+
+    if (lang) {
+        return this[isbn]['title'][lang];
+    }
+    return false;
+
+
+
 }
 
 books.getTranslator = function(isbn, lang) {
+    if (typeof this[isbn] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+
+    if (typeof this[isbn]['translator'] === 'undefined') {
+        return null;
+    }
+
+    let transl = this[isbn]['translator'][lang];
+    if (transl) {
+        return transl;
+    }
+    return false;
+
 
 }
 
 
-console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling
-console.log( books.getAuthor('000-00-0000-000-0') ); // null
-console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kamień Filozoficzny
-console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
-console.log( books.getTranslator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
-console.log( books.getTranslator('83-7278-007-2', 'en') ); // false
+console.log(books.getAuthor('978-83-7278-000-3')); // J.K. Rowling
+console.log(books.getAuthor('000-00-0000-000-0')); // null
+console.log(books.getTitle('978-83-7278-000-3', 'pl')); // Harry Potter i Kamień Filozoficzny
+console.log(books.getTitle('978-83-7278-000-3', 'en')); // Harry Potter and the Philosopher's Stone
+console.log(books.getTranslator('83-7278-007-2', 'pl')); // Andrzej Polkowski
+console.log(books.getTranslator('83-7278-007-2', 'en')); // false

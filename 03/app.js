@@ -18,7 +18,7 @@ const books = {
         },
         translator: {
             en: null,
-            pl: 'Andrzej Polkowski',
+            pl: 'Andrzej Polkowski', 
         }
     },
 }
@@ -41,11 +41,44 @@ books.getAuthor = function(isbn) {
     return false;
 }
 
-books.getTitle = function(isbn, lang) {
+
+
+    books.getTitle = function(isbn, lang) {
+
+    if(typeof this[isbn] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+
+    if(typeof this[isbn]['title'] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+
+    const title = this[isbn]['title'][lang];
+    if(title){
+        return title
+    } return null
 
 }
 
-books.getTranlator = function(isbn, lang) {
+books.getTranlator = function(isbn, who) {
+
+    if(typeof this[isbn] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+
+    if(typeof this[isbn]['translator'] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+
+    const translator = this[isbn]['translator'][who];
+    if(translator){
+        return translator
+    } return false
+
 
 }
 
@@ -56,3 +89,9 @@ console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kami
 console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
 console.log( books.getTranlator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
 console.log( books.getTranlator('83-7278-007-2', 'en') ); // false
+
+
+
+
+
+

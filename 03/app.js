@@ -18,21 +18,21 @@ const books = {
         },
         translator: {
             en: null,
-            pl: 'Andrzej Polkowski', 
+            pl: 'Andrzej Polkowski',
         }
     },
 }
 
-books.getAuthor = function(isbn) {
+books.getAuthor = function (isbn) {
     // w tym przypadku this === books
-    
-    if(typeof this[isbn] === 'undefined') {
+
+    if (typeof this[isbn] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
     }
 
     const author = this[isbn]['author'];
-    if(author) {
+    if (author) {
         // zwracam informacje o autorze
         return author;
     }
@@ -43,53 +43,57 @@ books.getAuthor = function(isbn) {
 
 
 
-    books.getTitle = function(isbn, lang) {
+books.getTitle = function (isbn, lang) {
 
-    if(typeof this[isbn] === 'undefined') {
+    if (typeof this[isbn] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
     }
 
-    if(typeof this[isbn]['title'] === 'undefined') {
+    if (typeof this[isbn]['title'] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
     }
+
+    console.log(this[isbn]['title'])
 
     const title = this[isbn]['title'][lang];
-    if(title){
+    if (title) {
         return title
     } return null
 
 }
 
-books.getTranlator = function(isbn, who) {
+books.getTranlator = function (isbn, lang) {
 
-    if(typeof this[isbn] === 'undefined') {
+    if (typeof this[isbn] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
     }
 
-    if(typeof this[isbn]['translator'] === 'undefined') {
+    if (typeof this[isbn]['translator'] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
     }
 
-    const translator = this[isbn]['translator'][who];
-    if(translator){
+    const translator = this[isbn]['translator'][lang];
+    if (translator) {
         return translator
-    } return false
+    } return null
 
 
 }
 
 
-console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling
-console.log( books.getAuthor('000-00-0000-000-0') ); // null
-console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kamień Filozoficzny
-console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
-console.log( books.getTranlator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
-console.log( books.getTranlator('83-7278-007-2', 'en') ); // false
+console.log(books.getAuthor('978-83-7278-000-3')); // J.K. Rowling
+console.log(books.getAuthor('000-00-0000-000-0')); // null
+console.log(books.getTitle('978-83-7278-000-3', 'pl')); // Harry Potter i Kamień Filozoficzny
+console.log(books.getTitle('978-83-7278-000-3', 'en')); // Harry Potter and the Philosopher's Stone
+console.log(books.getTranlator('83-7278-007-2', 'pl')); // Andrzej Polkowski
+console.log(books.getTranlator('83-7278-007-2', 'en')); // false
 
+
+console.log(books['978-83-7278-000-3']['translator']['pl'])
 
 
 

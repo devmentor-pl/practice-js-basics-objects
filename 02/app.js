@@ -21,3 +21,14 @@ for(const key in calendarJS) {
 }
 
     ///`ES1 wydano w terminie 1997-06`.
+
+//2 
+
+for(const key in calendarJS) {
+    const value = calendarJS[key]
+    if(value === key) {
+        console.log(key + 'nie zostało wydane')
+    } else {
+        console.log(key + 'wydano w terminie' + value) 
+    }
+}

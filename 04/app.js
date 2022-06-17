@@ -2,8 +2,8 @@ const user = {
     firstName: 'Adam',
     lastName: 'Nowak',
     born: {
-        day: '14',
-        month: '4',
+        day: '17',
+        month: '6',
         year: '1985'
     }
 }
@@ -15,15 +15,15 @@ const bornYear = Number(user['born']['year'])
 const now = new Date();
 
 const year = now.getFullYear()
-const month = now.getMonth()
+const month = now.getMonth() + 1
 const day = now.getDate()
 
-const check = function(){
-   
-    if(bornDay&&bornMonth&&bornYear===day&&month&&year){
-    return 'yes'
+const check = function () {
 
-} else return 'no'
+    if (bornDay && bornMonth === month) {
+        return 'Mam urodziny'
+
+    } else return 'To nie ten dzień'
 }
 
 console.log(check())

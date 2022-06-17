@@ -7,4 +7,4 @@ const user = {
     age: 33
 }
 
-console.log(user['firstName'], user['lastName'], user['sex'], user['agegit '] )
+console.log(user['firstName'], user['lastName'], user['sex'], user['age'] )

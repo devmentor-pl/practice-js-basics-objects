@@ -12,7 +12,7 @@ const now = new Date();
 const birthday = user.born;
 
 if(birthday.day == now.getDate() &&
-months.indexOf(birthday.month) == now.getMonth()) {
+months.indexOf(birthday.month) === now.getMonth()) {
     console.log("Happy Birthday!")
 }
 else{

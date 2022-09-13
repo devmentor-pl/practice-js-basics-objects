@@ -11,7 +11,7 @@ const calendarJS = {
 }
 
 for (const js in calendarJS) {
-    if(js === null) {
+    if(calendarJS[js] === null) {
         console.log('nie została wydana!')
     } else {
         console.log(calendarJS[js]);

@@ -42,7 +42,7 @@ books.getAuthor = function (isbn) {
 }
 
 books.getTitle = function (isbn, lang) {
-    if (typeof this[isbn]["title"] === "undefined" && typeof this[isbn]["title"] === null) {
+    if (typeof this[isbn]["title"] === "undefined" && this[isbn]["title"] === null) {
         return null;
     }
     const titleBooks = this[isbn]["title"][lang];

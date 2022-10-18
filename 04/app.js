@@ -2,7 +2,7 @@ const user = {
     firstName: 'Adam',
     lastName: 'Nowak',
     born: {
-        day: '14',
+        day: '18',
         month: '10',
         year: '2022'
         // day: '12',
@@ -11,29 +11,18 @@ const user = {
     }
 }
 
-
 const currentTime = new Date();
 const userBirthdayToday = {
     day: currentTime.getDate(),
     month: currentTime.getMonth() + 1,
-    year: currentTime.getFullYear()
 }
 
 
-// if (userBirthdayToday == user.born) {
-//     console.log(true);
-// } else {
-//     console.log(false);
-// }
-// ?? PYTANIE dlaczego porównanie luźnie tutaj nie dziala??
-
-if (user.born.day == userBirthdayToday.day && user.born.month == userBirthdayToday.month && user.born.year == userBirthdayToday.year) {
+if (user.born.day == userBirthdayToday.day && user.born.month == userBirthdayToday.month) {
     console.log("Użytkownik ma dzisiaj urodziny");
 } else {
     console.log("Użytkownik nie ma dzisiaj urodzin");
 }
-
-// const a = currentTime.getTime();
 
 
 

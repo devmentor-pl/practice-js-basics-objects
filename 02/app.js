@@ -9,3 +9,17 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
+// for(const key in calendarJS) {
+//     console.log(calendarJS)
+// }
+
+// const keys = Object.keys(calendarJS);
+// const values = Object.values(calendarJS);
+// console.log(keys, values)
+
+
+
+
+
+
+

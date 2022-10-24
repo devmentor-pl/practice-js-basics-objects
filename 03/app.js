@@ -42,10 +42,17 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
-
+    const title = this[isbn]['title']['pl'];
+    if (title) {
+        return title;
+    }
 }
 
 books.getTranslator = function(isbn, lang) {
+    const version = this[isbn]['translator']['pl'];
+    if(version) {
+        return version;    
+    }
 
 }
 

@@ -7,15 +7,6 @@ const user = {
 		year: '1985',
 	},
 };
-const user2 = {
-	firstName: 'Adamadsa',
-	lastName: 'Nowakasdas',
-	born: {
-		day: '14',
-		month: '04',
-		year: '1994',
-	},
-};
 
 const date = new Date();
 const currentDay = date.getDate();
@@ -30,7 +21,7 @@ user.checkBirthday = function () {
 			`Wszystkiego najlepszego ${this.firstName} ${this.lastName}!`
 		);
 	}
-	return null;
+	return false;
 };
 
 user.checkBirthday();

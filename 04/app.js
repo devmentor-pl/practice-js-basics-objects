@@ -1,15 +1,35 @@
-function birthdayCheck() {
+// 1st solution
+function checkBirthday() {
     const date = new Date();
     const day = date.getDate();
     const month = date.getMonth() + 1;
     const dateToday = day + '/' + month;
-    const userBorn = Object.values(this.born).join('/');
-    const userBirthday = userBorn.slice(0, -5);
 
-    if (dateToday === userBirthday) {
-        console.log(`Today is ${this.firstName}'s birthday. Happy Birthday ${this.firstName}!`);
+    // DD/MM
+    const userBorn = Object.values(this.born).join('/').slice(0, -5);
+    const userName = this.firstName;
+
+    output(dateToday, userBorn, userName);
+}
+
+// 2nd solution
+function checkBirthday2() {
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const dateToday = day + '/' + month;
+    const userBorn = this.born.day + '/' + this.born.month;
+    const userName = this.firstName;
+
+    return output(dateToday, userBorn, userName);
+}
+
+// Output message
+const output = function (date, born, name) {
+    if (date === born) {
+        console.log(`Today is ${name}'s birthday. Happy Birthday ${name}!`);
     } else {
-        console.log(`Today isn't ${this.firstName}'s birthday :(. ${user.firstName}'s birthday is in ${userBirthday} – remember that date!`);
+        console.log(`Today is not ${name}'s birthday :(. ${name}'s birthday is in ${born} – remember that date!`);
     }
 }
 
@@ -21,5 +41,6 @@ const user = {
         month: '12',
         year: '1985'
     },
-    isBirthday: birthdayCheck,
+    isBirthday: checkBirthday,
+    isBirthday2: checkBirthday2,
 }

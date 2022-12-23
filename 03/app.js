@@ -49,17 +49,14 @@ books.getTitle = function (isbn, lang) {
 
     const title = this[isbn]['title'];
 
-    for (const key in title) {
-        if (key === lang) {
-            return title[key];
-        }
+    if (title[lang]) {
+        return title[lang];
     }
 
-    // check if input lang exist in object
-    if (typeof this[lang] === 'undefined') {
-        return null;
-    }
+    // if input lang doesn't exist in object
+    return null;
 }
+
 
 books.getTranslator = function (isbn, lang) {
 
@@ -70,21 +67,14 @@ books.getTranslator = function (isbn, lang) {
 
     const translator = this[isbn]['translator'];
 
-    for (const key in translator) {
-        if (lang === key) {
-
-            // check if property has null
-            if (translator[key] === null) {
-                return false;
-            }
-            return translator[key];
-        }
+    if (translator[lang]) {
+        return translator[lang];
+    } else if (translator[lang] === null) {
+        return false;
     }
 
-    // check if input lang exist in object
-    if (typeof this[lang] === 'undefined') {
-        return null;
-    }
+    // if input lang doesn't exist in object
+    return null;
 }
 
 

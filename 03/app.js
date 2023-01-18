@@ -42,35 +42,50 @@ books.getAuthor = function (isbn) {
 };
 
 books.getTitle = function (isbn, lang) {
+	if (typeof this[isbn] === "undefined") {
+		return null;
+	}
+
+	if (typeof this[isbn]["title"] === "undefined") {
+		return null;
+	}
+
 	if (typeof this[isbn]["title"][lang] === "undefined") {
 		return null;
 	}
 
-	const english = this[isbn]["title"]["en"];
-	const polish = this[isbn]["title"]["pl"];
-	// console.log(english);
-	// console.log(polish);
+	// const english = this[isbn]["title"]["en"];
+	// const polish = this[isbn]["title"]["pl"];
 
-	if (this[isbn]["title"][lang] === polish) {
-		return polish;
-	} else {
-		return english;
+	if (typeof this[isbn]["title"][lang] !== undefined) {
+		return this[isbn]["title"][lang];
 	}
+	return false;
 };
 
 books.getTranslator = function (isbn, lang) {
-	const polishTranslation = this[isbn]["translator"]["pl"];
-	const englishTranslation = this[isbn]["translator"]["en"];
-	// console.log(polishTranslation);
-	// console.log(englishTranslation);
-
-	if (this[isbn]["translator"][lang] === null) {
-		return false;
-	} else if (this[isbn]["translator"][lang] === polishTranslation) {
-		return polishTranslation;
-	} else {
-		return englishTranslation;
+	if (typeof this[isbn] === "undefined") {
+		return null;
 	}
+
+	if (typeof this[isbn]["translator"] === "undefined") {
+		return null;
+	}
+
+	if (typeof this[isbn]["translator"][lang] === "undefined") {
+		return null;
+	}
+
+	// const polishTranslation = this[isbn]["translator"]["pl"];
+	// const englishTranslation = this[isbn]["translator"]["en"];
+
+	if (this[isbn]["translator"][lang] !== undefined) {
+		return this[isbn]["translator"][lang];
+	} else {
+		return false;
+	}
+
+	return false;
 };
 
 console.log(books.getAuthor("978-83-7278-000-3")); // J.K. Rowling

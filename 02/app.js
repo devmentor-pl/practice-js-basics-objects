@@ -18,7 +18,3 @@ for (const key in calendarJS) {
 		console.log(key + " nie zostało wydane");
 	}
 }
-
-if (typeof this[isbn]["title"]["pl"] === "undefined") {
-	return null;
-}

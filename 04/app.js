@@ -17,7 +17,9 @@ console.log(currentDay);
 const currentMonth = today.getMonth() + 1;
 console.log(currentMonth);
 
-const birthday = function (object) {
+birthday(user);
+
+function birthday(object) {
 	const dayOfBirth = user.born.day;
 	const monthOfBirth = user.born.month;
 	if (
@@ -28,6 +30,4 @@ const birthday = function (object) {
 	} else {
 		console.log("Today is not your birthday");
 	}
-};
-
-birthday(user);
+}

@@ -3,7 +3,6 @@ function Name(firstName,lastName,sex,age){
     this.lastName = lastName,
     this.sex = sex,
     this.age = age;   
-    // this.info = this.info
     this.check()
     // this.info()
 } 

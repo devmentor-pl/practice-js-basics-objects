@@ -61,7 +61,7 @@ books.getTranslator = function(isbn, lang) {
     }
     
     lang = this[isbn]['translator'][lang];
-    if(lang) {
+    if(lang !== null) {
         return lang;
     } 
 

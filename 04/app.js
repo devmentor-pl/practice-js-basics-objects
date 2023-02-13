@@ -10,7 +10,7 @@ const user = {
 
 const now = new Date();
 const currentDay = now.getDate();
-const currentMonth = now.getMonth();
+const currentMonth = now.getMonth() + 1;
 
 const day = Number(user.born.day);
 const month = Number(user.born.month);

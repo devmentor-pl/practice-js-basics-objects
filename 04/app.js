@@ -9,12 +9,12 @@ const user = {
 }
 
 user.checkBirthday = function (day, month, year) {
-    const date = (new Date).toLocaleDateString().split('.')
-    const actualDay = date[0]
-    const actualMonth = date[1]
-    const actualYear = date[2]
+    const date = new Date()
+    const actualDay = date.getDate()
+    const actualMonth = date.getMonth() + 1
+    const actualYear = date.getFullYear()
 
-    if (day === actualDay && month === actualMonth) {
+    if (day == actualDay && month == actualMonth) {
         return `${this.firstName} obchodzi dziś ${actualYear - year} urodziny`
     }
     return `${this.firstName} nie ma dziś urodzin`

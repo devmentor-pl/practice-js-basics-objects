@@ -20,8 +20,6 @@ user.calcAge = function (currentDate, birthYear, user) {
 	if (currentDate.includes(userBirthday)) {
 		console.log('This person has today birthday');
 	}
-
-	return;
 };
 const currentDate = new Date().toLocaleDateString();
 

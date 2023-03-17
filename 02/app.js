@@ -10,10 +10,6 @@ const calendarJS = {
 	ES9: '2018-06',
 };
 for (const version in calendarJS) {
-	if (Object.hasOwnProperty.call(calendarJS, version)) {
-		const element = calendarJS[version];
-		// return `${calendarJS[version]} wydano w roku`;
-	}
 	if (calendarJS[version] === null) {
 		console.log(`ES4 nie zostało wydane`);
 		continue;

@@ -57,13 +57,8 @@ books.getTranslator = function (isbn, lang) {
     return null;
   }
 
-  if (typeof this[isbn]["translator"][lang] !== null) {
+  if (this[isbn]["translator"][lang]) {
     return this[isbn]["translator"][lang];
-    //nie wiem dlaczego kod zwraca null zamiast false. Podejrzewam, ze chodzi o to ze kod
-    // console.log(typeof (books['83-7278-007-2']['translator']['en']))
-    // zwraca object, a
-    //console.log(typeof (books['83-7278-007-2']['translator']['pl']))
-    //zwraca string
   }
   return false;
 };

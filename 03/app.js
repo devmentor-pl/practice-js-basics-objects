@@ -55,7 +55,7 @@ books.getTitle = function (isbn, lang) {
 }
 
 books.getTranslator = function (isbn, lang) {
-    if (typeof this[isbn] === 'undefined' || typeof this[isbn]['title'][lang] === 'undefined') {
+    if (typeof this[isbn] === 'undefined' || typeof this[isbn]['translator'][lang] === 'undefined') {
         return null
     }
 

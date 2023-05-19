@@ -2,7 +2,7 @@
 
 &nbsp;
 
-# JavaScript: Podstawy – obiekty
+# JavaScript: Podstawy – obiekty test
 
 Obiekty to kolejna struktura w JavaScript, która pozwala na grupowanie danych. Przekonaj się, czy potrafisz operować na właściwościach i wartościach obiektów.
 

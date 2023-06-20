@@ -12,14 +12,12 @@ const calendarJS = {
 
 const printObject = function (object) {
 	for (const key in object) {
-    if (object[key] !== null) {
-		console.log(` ${key} wydano w terminie ${object[key]}`);
-	  } else {
-    console.log(` ${key} nie zostało wydane`);  
-    }
-  }
+		if (object[key] === null) {
+			console.log(` ${key} nie zostało wydane`);
+		} else {
+			console.log(` ${key} wydano w terminie ${object[key]}`);
+		}
+	}
 };
 
 printObject(calendarJS);
-
-

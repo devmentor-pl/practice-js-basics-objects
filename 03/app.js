@@ -42,26 +42,23 @@ books.getAuthor = function (isbn) {
 };
 
 books.getTitle = function (isbn, lang) {
-  if (typeof this[lang] === undefined) {
+  if (typeof this[isbn] === "undefined") {
     return null;
   }
   const title = this[isbn]["title"];
-  for (const key in title) {
-    if (lang === key) return title[key];
-  }
-  return false;
+
+  return title[lang];
 };
 
 books.getTranslator = function (isbn, lang) {
+  if (typeof this[isbn] === "undefined") {
+    return null;
+  }
   const translator = this[isbn]["translator"];
   if (translator[lang] === null) {
     return false;
   }
-  for (const key in translator) {
-    if (lang === key) {
-      return translator[lang];
-    }
-  }
+  return translator[lang];
 };
 
 console.log(books.getAuthor("978-83-7278-000-3")); // J.K. Rowling
@@ -70,3 +67,5 @@ console.log(books.getTitle("978-83-7278-000-3", "pl")); // Harry Potter i Kamie≈
 console.log(books.getTitle("978-83-7278-000-3", "en")); // Harry Potter and the Philosopher's Stone
 console.log(books.getTranslator("83-7278-007-2", "pl")); // Andrzej Polkowski
 console.log(books.getTranslator("83-7278-007-2", "en")); // false
+
+

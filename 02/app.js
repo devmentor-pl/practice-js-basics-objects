@@ -13,6 +13,7 @@ const calendarJS = {
 for (const version in calendarJS) {
 	if (calendarJS[version] === null) {
 		calendarJS[version] = 'nie zostało wydane';
+	} else {
+		console.log(`${version} wydano w terminie ${calendarJS[version]}`);
 	}
-	console.log(`${version} wydano w terminie ${calendarJS[version]}`);
 }

@@ -41,21 +41,28 @@ books.getAuthor = function (isbn) {
 };
 
 books.getTitle = function (isbn, lang) {
-	const language = lang;
-	const isTitleAvailable = this[isbn]['title'][language];
-	if (isTitleAvailable) {
-		return isTitleAvailable;
+	if (isbn) {
+		const language = lang;
+		const isTitleAvailable = this[isbn]['title'][language];
+		if (isTitleAvailable) {
+			return isTitleAvailable;
+		} else {
+			return 'wpisz poprawny jezyk lub tytul nie zostal jeszcze przetlumaczony';
+		}
+	} else {
+		return 'wprowadz poprawny kod isbn';
 	}
-	return 'upewnij sie czy podales dobre isbn, jezyk';
 };
 
 books.getTranslator = function (isbn, lang) {
-	const language = lang;
-	const isTranslateAvailable = this[isbn]['translator'][language];
-	if (isTranslateAvailable) {
-		return this[isbn]['translator'][language];
-	} else {
-		return false;
+	if (isbn) {
+		const language = lang;
+		const isTranslateAvailable = this[isbn]['translator'][language];
+		if (isTranslateAvailable) {
+			return this[isbn]['translator'][language];
+		} else {
+			return false;
+		}
 	}
 };
 

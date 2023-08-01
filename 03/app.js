@@ -41,7 +41,7 @@ books.getAuthor = function (isbn) {
 };
 
 books.getTitle = function (isbn, lang) {
-	if (isbn) {
+	if (isbn && this[isbn]) {
 		const language = lang;
 		const isTitleAvailable = this[isbn]['title'][language];
 		if (isTitleAvailable) {
@@ -55,7 +55,7 @@ books.getTitle = function (isbn, lang) {
 };
 
 books.getTranslator = function (isbn, lang) {
-	if (isbn) {
+	if (isbn && this[isbn]) {
 		const language = lang;
 		const isTranslateAvailable = this[isbn]['translator'][language];
 		if (isTranslateAvailable) {

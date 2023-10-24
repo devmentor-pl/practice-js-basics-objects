@@ -37,15 +37,29 @@ books.getAuthor = function(isbn) {
         return author;
     }
 
-    // brak informacji o autorze
+    // brak informacji o autorzes
     return false;
 }
 
 books.getTitle = function(isbn, lang) {
 
+    const title = this[isbn, lang]['title'];
+    if(title) {
+        return title;
+    }
+
 }
 
 books.getTranslator = function(isbn, lang) {
+    const translator = this[isbn, lang]['translator'];
+    if(translator) {
+        return translator;
+    }
+    else{
+        return null;
+    
+    }
+        
 
 }
 

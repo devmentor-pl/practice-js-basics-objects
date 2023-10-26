@@ -5,15 +5,16 @@ const user = {
         day: '14',
         month: '04',
         year: '1985',
-        birthday: function () {
-            birthday(this.day + "." + this.month);
-            return this.birthday
-        }
+       
     }
 }
 
 
 let today= new Date;
 
-console.log(today)
-console.log(user.born.birthday);
+if(Number(user.born.day) === today.getDate() && Number(user.born.month) === (today.getMonth()+1)) {
+    console.log("Urodziny");
+}
+else{
+    console.log("Nie dziś!");
+}

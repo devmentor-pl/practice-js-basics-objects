@@ -37,15 +37,39 @@ books.getAuthor = function(isbn) {
         return author;
     }
 
-    // brak informacji o autorze
+    // brak informacji o autorzes
     return false;
 }
 
 books.getTitle = function(isbn, lang) {
+    
+    if(typeof this[isbn] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+
+    const title = this[isbn]['title'][lang];
+    if(title) {
+        return title;
+    }
 
 }
 
 books.getTranslator = function(isbn, lang) {
+
+    if(typeof this[isbn] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+    const translator = this[isbn]['translator'][lang];
+    if(translator) {
+        return translator;
+    }
+    else{
+        return false;
+    
+    }
+        
 
 }
 

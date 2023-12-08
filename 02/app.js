@@ -9,14 +9,33 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
-const info = ''
 
-for (const key in calendarJS) {
-    if(calendarJS[key] === null) {
-        console.log(key + ' nie zostalo wydane')
+function valueValidator(val) {
+    if(val === null) {
+        return "null";
     }
-    else{
-    // console.log('key:' + key + ' ' +calendarJS[key]);
-    console.log(key + ' wydano w terminie: ' + calendarJS[key])
+    return "not null";
 }
+
+function getValues(obj) {
+    for(const key in obj) {
+        const value = valueValidator(obj[key]);
+        showValues(value, key, obj);
+
+    }
 }
+
+
+function makeCom(validated, val, obj) {
+    const communicates = {
+        withoutNull: `${val} data wydania ${obj[val]}`,
+        withNull: `${val} nie zostało wydane`
+    }
+    return communicates[validated];
+}
+
+function showValues(validated, val, obj) {
+    console.log(makeCom(validated, val, obj))
+}
+
+getValues(calendarJS);

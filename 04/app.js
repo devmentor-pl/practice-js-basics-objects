@@ -11,3 +11,10 @@ const user = {
 const now = new Date();
 console.log(now);
 
+const currDay = now.getDate();
+console.log(currDay);
+
+const currMonth = now.getMonth();
+console.log(currDay);
+
+birthday();

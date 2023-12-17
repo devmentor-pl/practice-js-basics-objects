@@ -6,4 +6,4 @@ const user = {
 
 };
 
-console.log()
+console.log(user['age'], user['firstName'], user['lastName'], user['sex']);

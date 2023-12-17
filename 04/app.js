@@ -14,7 +14,15 @@ console.log(now);
 const currDay = now.getDate();
 console.log(currDay);
 
-const currMonth = now.getMonth();
+const currMonth = now.getMonth() + 1;
 console.log(currDay);
 
 birthday();
+
+function birthday() {
+    const dBirth = user.born.day;
+    const mBirth = user.born.month;
+    if (
+        parseInt
+    )
+}

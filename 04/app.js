@@ -7,3 +7,7 @@ const user = {
         year: '1985'
     }
 }
+
+const now = new Date();
+console.log(now);
+

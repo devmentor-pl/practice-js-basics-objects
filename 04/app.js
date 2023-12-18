@@ -23,6 +23,11 @@ function birthday() {
     const dBirth = user.born.day;
     const mBirth = user.born.month;
     if (
-        parseInt
-    )
+        parseInt(dBirth) === currDay &&
+        parseInt(mBirth) === currMonth
+    ) {
+        console.log("Happy Birthday! To You!");
+    } else {
+        console.log("Is not your Birthday. You must wait!");
+    }
 }

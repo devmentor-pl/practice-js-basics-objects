@@ -42,12 +42,30 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
-
+    if (typeof this[isbn] === 'undefined') {
+        return null;
+    
+    }
+    const titleForLang = this[isbn]['title'][lang];
+    if (typeof titleForLang !== 'undefined') {
+        return titleForLang;
+    }
+    return null;
 }
 
 books.getTranslator = function(isbn, lang) {
-
+    if (typeof this[isbn] === 'undefined') {
+        return null;
+    }
+    const translatorForLang = this[isbn]['translator'][lang];
+    if (translatorForLang !== null) {
+        return translatorForLang;
+    } else {
+        return false;
+    }
 }
+
+
 
 
 console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling

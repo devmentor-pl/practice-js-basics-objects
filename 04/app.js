@@ -8,12 +8,11 @@ const user = {
     }
 }
 
-const currentDate = new Date(1985, 4, 14);
+const currentDate = new Date(2002, 3, 14); 
 
 if (
     currentDate.getDate() === Number(user.born.day) &&
-    currentDate.getMonth() === Number(user.born.month) &&
-    currentDate.getFullYear() === Number(user.born.year)
+    currentDate.getMonth() === Number(user.born.month - 1)
 ) {
     console.log(`${user.firstName} ${user.lastName} ma dzisiaj urodziny!`)
 } else {

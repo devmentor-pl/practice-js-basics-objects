@@ -42,11 +42,33 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
+  if (this[isbn] !== undefined) {
+    const title = this[isbn]["title"];
 
+    if (typeof title[lang] === 'undefined') {
+      return null;
+    }
+
+    return title[lang];
+  } else {
+    return null;
+  }
 }
 
 books.getTranslator = function(isbn, lang) {
+  if (this[isbn] !== undefined) {
+    const translator = this[isbn]["translator"];
 
+    if (typeof translator[lang] === 'undefined') {
+      return null;
+    } else if (translator[lang] === null) {
+      return false;
+    } else {
+      return translator[lang];
+    }
+  } else {
+    return null;
+  }
 }
 
 

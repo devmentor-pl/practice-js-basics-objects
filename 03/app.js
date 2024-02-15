@@ -1,3 +1,6 @@
+// Nie działa
+
+
 const books = {
     '978-83-7278-000-3': {
         author: 'J.K. Rowling',
@@ -42,6 +45,16 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
+    if(typeof this.title === 'undefined') {
+        return null;
+    }
+
+    books.title.forEach( function(title) {
+
+
+        console.log(title);
+        return title['pl'] + title.pl;
+    });
 
 }
 

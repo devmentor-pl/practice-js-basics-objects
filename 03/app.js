@@ -44,19 +44,24 @@ books.getAuthor = function(isbn) {
     return false;
 }
 
-books.getTitle = function(isbn, lang) {
-    if(typeof this.title === 'undefined') {
-        return null;
-    }
+// books.getTitle = function(isbn, title) {
+//     if(typeof this[isbn] === 'undefined') {
+//         return null;
+//     }
+// // dodać .forEach()
+//     const title = this[isbn]['title'];
+//     if(title) {
+//         return title;
+//     }
 
-    books.title.forEach( function(title) {
+//     return false;
+  
+    // books.title.forEach( function(title) {
+    //     console.log(title);
+    //     return title['pl'] + title.pl;
+    // });
 
-
-        console.log(title);
-        return title['pl'] + title.pl;
-    });
-
-}
+// }
 
 books.getTranslator = function(isbn, lang) {
 

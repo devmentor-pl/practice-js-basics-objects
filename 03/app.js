@@ -1,6 +1,3 @@
-// Nie działa
-
-
 const books = {
     '978-83-7278-000-3': {
         author: 'J.K. Rowling',
@@ -44,27 +41,31 @@ books.getAuthor = function(isbn) {
     return false;
 }
 
-// books.getTitle = function(isbn, title) {
-//     if(typeof this[isbn] === 'undefined') {
-//         return null;
-//     }
-// // dodać .forEach()
-//     const title = this[isbn]['title'];
-//     if(title) {
-//         return title;
-//     }
+books.getTitle = function(isbn, lang) {
+    if(typeof this[isbn] === 'undefined') {
+        return null;
+    }
 
-//     return false;
-  
-    // books.title.forEach( function(title) {
-    //     console.log(title);
-    //     return title['pl'] + title.pl;
-    // });
+    const book = this[isbn]['title'][lang];
+    // dlaczego, aby wyświetlić książki, piszemy taki kod ponizej?
+    if(book) {
+        return book;
+    }
 
-// }
+    return false;
+}
 
 books.getTranslator = function(isbn, lang) {
 
+    if(this[isbn] === null) {
+        return null;
+    }
+
+    const bookTranslator = this[isbn]['translator'][lang];
+    if(bookTranslator) {
+        return bookTranslator;
+    }
+    return false;
 }
 
 

@@ -47,7 +47,7 @@ books.getTitle = function(isbn, lang) {
     }
 
     const book = this[isbn]['title'][lang];
-    // dlaczego, aby wyświetlić książki, piszemy taki kod ponizej?
+    
     if(book) {
         return book;
     }

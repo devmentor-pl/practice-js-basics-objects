@@ -10,8 +10,8 @@ const user = {
 
 const userFirstName = user.firstName
 const userLastName = user.lastName
-const userDayBirth = user.born.day
-const userMonthBirth = user.born.month
+const userDayBirth = parseFloat(user.born.day)
+const userMonthBirth = parseFloat(user.born.month)
 const userYearBirth = user.born.year
 
 const checkBirthDay = () => {
@@ -20,25 +20,26 @@ const checkBirthDay = () => {
 	let currentMonth = fullDate.getMonth()
 	const currentYear = fullDate.getFullYear()
 
-	console.log(typeof currentMonth)
-
 	if (currentDay < 10) {
 		currentDay = "0" + currentDay
 	} else {
 		currentDay
 	}
 
+	// console.log(typeof currentDay, currentDay)
+
 	if (currentMonth < 10) {
-		currentMonth = "0" + currentMonth
 		currentMonth++
+		currentMonth = parseFloat("0" + currentMonth)
 	} else {
 		currentMonth++
 	}
 
+	// console.log(typeof currentMonth, currentMonth)
+
 	if (
 		currentDay === userDayBirth &&
-		currentMonth === userMonthBirth &&
-		currentYear === userYearBirth
+		currentMonth === userMonthBirth
 	) {
 		console.log(
 			`Użytkownik ${userFirstName} ${userLastName} obchodzi dzisiaj urodziny.`

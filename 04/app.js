@@ -14,9 +14,8 @@ function checkBirthday(person) {
     let currentMonth = addLeadingZero(today.getMonth() + 1);
     let birthdayDay = person['born']['day'];
     let birthdayMonth = person['born']['month'];
-    return (birthdayDay == currentDay && birthdayMonth == currentMonth);
+    return (birthdayDay === currentDay && birthdayMonth === currentMonth);
 }
-
 
 console.log(checkBirthday(user));
 

@@ -52,7 +52,7 @@ books.getTitle = function(isbn, lang) {
         return title;
     }
 
-    return null;
+    return false;
 }
 
 books.getTranslator = function(isbn, lang) {

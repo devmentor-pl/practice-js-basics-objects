@@ -9,3 +9,14 @@ const calendarJS = {
     'ES8': '2017-06',
     'ES9': '2018-06',
 }
+
+for(const key in calendarJS) {  // 'key' to właściwości obiektu 'calendar JS'
+    if (Object.hasOwnProperty.call(calendarJS, key)) {
+        const value = calendarJS[key];
+        if (value === null) {
+            console.log(`${key} nie zostało wydane`);
+        } else {
+            console.log(`${key} zostało wydane w ${value}`);
+        }
+    }
+}

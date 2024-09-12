@@ -8,4 +8,17 @@ const calendarJS = {
     'ES7': '2016-06',
     'ES8': '2017-06',
     'ES9': '2018-06',
+    'ES10': '2019-06',
+    'ES11': '2020-06',
+    'ES12': '2021-06',
+}
+
+for (const key in calendarJS) {
+
+    if (calendarJS[key] === null) {
+        console.log(`${key} nie zostało wydane`)
+    } else {
+        console.log(`${key} wydano w terminie ${calendarJS[key]}`)
+    }
+
 }

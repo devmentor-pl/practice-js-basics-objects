@@ -7,3 +7,17 @@ const user = {
         year: '1985'
     }
 }
+
+const day = new Date().getDate();
+const month = new Date().getMonth() + 1;
+const year = new Date().getFullYear();
+
+function isUserBirthday() {
+
+    if(parseInt((user.born.day) === day) && parseInt(user.born.month) === month) {
+        return console.log('Happy Birthday!');
+    }
+    return console.log('Not Happy Birthday! but Have A Nice Day! ;) ');
+}
+
+isUserBirthday()

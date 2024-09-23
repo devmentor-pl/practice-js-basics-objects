@@ -23,16 +23,16 @@ const books = {
     },
 }
 
-books.getAuthor = function(isbn) {
+books.getAuthor = function (isbn) {
     // w tym przypadku this === books
-    
-    if(typeof this[isbn] === 'undefined') {
+
+    if (typeof this[isbn] === 'undefined') {
         // taki ISBN nie istnieje w moim spisie
         return null;
     }
 
     const author = this[isbn]['author'];
-    if(author) {
+    if (author) {
         // zwracam informacje o autorze
         return author;
     }
@@ -41,18 +41,48 @@ books.getAuthor = function(isbn) {
     return false;
 }
 
-books.getTitle = function(isbn, lang) {
+books.getTitle = function (isbn, lang) {
+    if (typeof this[isbn] === "undefined") {
+        return null;
+    }
+
+    const title = this[isbn]["title"];
+    if (title && typeof title[lang] !== "undefined") {
+        return title[lang];
+    }
+}
+
+books.getTranslator = function (isbn, lang) {
+    if (typeof this[isbn] === "undefined") {
+        return null
+    }
+
+    const translator = this[isbn]["translator"];
+
+    if (translator && typeof translator[lang] !== "undefined") {
+        if (translator[lang] === null) {
+            return false;
+        };
+        return translator[lang];
+    }
+
+
 
 }
 
-books.getTranslator = function(isbn, lang) {
 
-}
+console.log(books.getAuthor('978-83-7278-000-3')); // J.K. Rowling
+console.log(books.getAuthor('000-00-0000-000-0')); // null
+console.log(books.getTitle('978-83-7278-000-3', 'pl')); // Harry Potter i Kamień Filozoficzny
+console.log(books.getTitle('978-83-7278-000-3', 'en')); // Harry Potter and the Philosopher's Stone
+console.log(books.getTranslator('83-7278-007-2', 'pl')); // Andrzej Polkowski
+console.log(books.getTranslator('83-7278-007-2', 'en')); // false
 
 
-console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling
-console.log( books.getAuthor('000-00-0000-000-0') ); // null
-console.log( books.getTitle('978-83-7278-000-3', 'pl') ); // Harry Potter i Kamień Filozoficzny
-console.log( books.getTitle('978-83-7278-000-3', 'en') ); // Harry Potter and the Philosopher's Stone
-console.log( books.getTranslator('83-7278-007-2', 'pl') ); // Andrzej Polkowski
-console.log( books.getTranslator('83-7278-007-2', 'en') ); // false
+// Tym razem w pliku `app.js` znajdziesz rozbudowaną strukturę, która przechowuje informacje o książkach. Nazwa właściwości obiektu to number ISBN książki. Przypisana do niej wartość to obiekt, który przechowuje informacje o książce identyfikującej się tym numerem ISBN.
+
+// Twoim zadaniem będzie napisanie funkcji `getTitle` oraz `getTranslator`, które pozwolą pobrać informacje o konkretnej książce. Funkcja `getAuthor` została już napisana i możesz się na niej wzorować, jednak pamiętaj, że przyjmuje ona tylko jeden parametr.
+
+// W przypadku Twoich funkcji (metod) mamy dodatkową zależność, która jest identyfikowana przy pomocy drugiego parametru. Pamiętaj, aby sprawdzić, czy właściwość istnieje. Jeśli nie, to zwróć `null`.
+
+// W przypadku funkcji `getTranslator` sprawdź również, czy wartość dla konkretnego języka we właściwości `translator` nie jest równa `null`. Jeśli jest, oznacza to, że wybrany język jest językiem oryginału i wtedy należy zwrócić `false`.

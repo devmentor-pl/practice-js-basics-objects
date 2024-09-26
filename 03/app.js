@@ -41,13 +41,35 @@ books.getAuthor = function(isbn) {
     return false;
 }
 
-books.getTitle = function(isbn, lang) {
-
+books.getTitle = function(isbn,lang) {
+    
+    
+const title = this[isbn]['title'][lang];
+    if (title) {
+        return title;
+    }
 }
 
+      
 books.getTranslator = function(isbn, lang) {
-
+   
+const version = this[isbn]['translator'][lang];
+    if(version) {
+        return version;
+    }
+    else {
+        return false;
+    }
 }
+
+    
+    
+
+
+
+      
+        
+      
 
 
 console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling

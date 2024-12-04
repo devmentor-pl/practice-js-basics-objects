@@ -2,8 +2,8 @@ const user = {
     firstName: 'Adam',
     lastName: 'Nowak',
     born: {
-        day: '14',
-        month: '04',
+        day: '04',
+        month: '12',
         year: '1985'
     }
 }
@@ -20,12 +20,15 @@ function checkBirthday(user){
     const birthdayMonth = parseInt(userBirthday.month);
 
     if (birthdayDay == currentDay && birthdayMonth == currentMonth) {
-        return 'Wszystkiego najlepszego z okazji dzisiejszych urodzin!';
+        return true;
     }
     else {
-        return 'Dzis nie masz urodzin'
+        return false;
     }
 
+}
+if (checkBirthday(user)){
+    console.log('Wszystkiego najlepszego z okazji urodzin!');
 }
 
 console.log(checkBirthday(user));

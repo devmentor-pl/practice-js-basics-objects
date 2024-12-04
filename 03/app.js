@@ -50,10 +50,10 @@ books.getTitle = function(isbn, lang) {
     }
 
 
-    if (lang === 'en') {
-        return title.en;
+    if (title[lang]) {
+        return title[lang];
     } else {
-        return title.pl;
+        return null;
     }
 
 }
@@ -66,14 +66,14 @@ books.getTranslator = function(isbn, lang) {
         return null;
     }
 
-    if (translator[lang] === null) {
+    if (translator[lang] === null || translator[lang] === undefined) {
         return false;
     }
 
-    if (lang === 'en') {
-        return translator.en;
+    if (translator[lang]) {
+        return translator[lang];
     } else {
-        return translator.pl;
+        return null;
     }
 }
 

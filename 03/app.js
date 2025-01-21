@@ -42,12 +42,41 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
+    if(typeof this[isbn] === 'undefined') {
+        
+        return null;
+    }
 
+    const bookTitle = this[isbn] ['title'];
+    if(bookTitle && bookTitle[lang]) {
+        return bookTitle;
+    }
+
+    return null;
 }
 
 books.getTranslator = function(isbn, lang) {
+    if(typeof this[isbn] === 'undefined') {
+        return null;
+    }
 
+    const bookTranslations = this[isbn]['translator'];
+    if(bookTranslations && bookTranslations[lang]) {
+        if(bookTranslations[lang] === null) {
+            return false;
+        }
+        return bookTranslations;
+    }
+
+    return null;
 }
+
+// mam jeden problem, w sumie to nie wiem czy jest to
+// problem, ale konsola zwraca mi wartości w formie tablic 
+// a nie jak w 'getAuthor' w formie tekstu 
+
+
+
 
 
 console.log( books.getAuthor('978-83-7278-000-3') ); // J.K. Rowling

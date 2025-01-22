@@ -49,7 +49,7 @@ books.getTitle = function(isbn, lang) {
 
     const bookTitle = this[isbn] ['title'];
     if(bookTitle && bookTitle[lang]) {
-        return bookTitle;
+        return bookTitle[lang];
     }
 
     return null;
@@ -61,11 +61,11 @@ books.getTranslator = function(isbn, lang) {
     }
 
     const bookTranslations = this[isbn]['translator'];
-    if(bookTranslations && bookTranslations[lang]) {
+    if(bookTranslations) {
         if(bookTranslations[lang] === null) {
             return false;
         }
-        return bookTranslations;
+        return bookTranslations[lang];
     }
 
     return null;

@@ -2,7 +2,7 @@ const user = {
   firstName: 'Adam',
   lastName: 'Nowak',
   born: {
-    day: '05',
+    day: '06',
     month: '04',
     year: '2025',
   },

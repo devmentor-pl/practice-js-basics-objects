@@ -42,6 +42,10 @@ books.getAuthor = function (isbn) {
 };
 
 books.getTitle = function (isbn, lang) {
+  if (typeof this[isbn] === 'undefinej') {
+    return null;
+  }
+
   if (typeof this[isbn]['title'][lang] === 'undefined') {
     return null;
   }

@@ -22,6 +22,8 @@ const books = {
         }
     },
 }
+const l = 'en';
+console.log(books['978-83-7278-000-3']['translator'][l]);
 
 books.getAuthor = function (isbn) {
     // w tym przypadku this === books
@@ -46,10 +48,10 @@ books.getTitle = function (isbn, lang) {
         return null;
     }
     const title = this[isbn]['title'];
-    const language = this[isbn]['lang'];
+    const language = title[lang];
 
-    if (title && typeof title[lang] !== undefined) {
-        return title[lang];
+    if (title && typeof language !== 'undefined') {
+        return language;
     }
     return null
 }

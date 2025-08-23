@@ -43,9 +43,39 @@ books.getAuthor = function(isbn) {
 
 books.getTitle = function(isbn, lang) {
 
+    const title = this[isbn]['title'];
+    if(title) {
+        if(title[lang] == null) {
+            return false;
+        }
+        if(lang === 'pl') {
+            return title['pl'];
+        }
+        if(lang === 'en') {
+            return title['en'];
+        }
+    }
+
+    return false;
+
 }
 
 books.getTranslator = function(isbn, lang) {
+
+    const translator = this[isbn]['translator'];
+    if(translator) {
+        if(translator[lang] == null) {
+            return false;
+        }
+        if(lang === 'pl') {
+            return translator['pl'];
+        }
+        if(lang === 'en') {
+            return translator['en'];
+        }
+    }
+
+    return false;
 
 }
 

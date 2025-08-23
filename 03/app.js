@@ -42,11 +42,28 @@ books.getAuthor = function(isbn) {
 }
 
 books.getTitle = function(isbn, lang) {
-
+    if(typeof this[isbn] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+    const lan = this[isbn]['title'][lang];
+    if(lang) {
+        return lan;
+    }
+    else return null;
 }
 
 books.getTranslator = function(isbn, lang) {
-
+    if(typeof this[isbn] === 'undefined') {
+        // taki ISBN nie istnieje w moim spisie
+        return null;
+    }
+    const lan = this[isbn]['translator'][lang];
+    if(lang) {
+        if(lan == null) return false;
+        else return lan;
+    }
+    else return null;
 }
 
 

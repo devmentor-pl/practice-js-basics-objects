@@ -7,3 +7,12 @@ const user = {
         year: '1985'
     }
 }
+
+const d = new Date();
+
+userHasBirthday();
+
+function userHasBirthday() {
+    console.log(d.getDate() == user.born.day && (d.getMonth() + 1) == user.born.month);
+    return d.getDate() == user.born.day && (d.getMonth() + 1) == user.born.month;
+}
